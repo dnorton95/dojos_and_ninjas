@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojos and Ninjas</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}"></head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+<body>    
+    <div class="d-flex-center"">
+        <h1 class="shinobininja">Dojos and Ninjas!</h1>
+    </div>
+    <div class="permanent-marker d-flex-center">
+        <div class="mr-5 form-border d-flex-center d-flex-column">
+            <h2>Create your Dojo!</h2>
+            <!-- In your form you need an action route (you will need to create this route in the server.py file) and a POST method -->
+            <form class="d-flex-column d-flex-center"action="/create_dojo" method="POST">
+                <!-- This loop is generally aceeptable for all validations -->
+                {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+                            {% if messages %}                            <!-- check if there are any messages -->
+                                {% for message in messages %}            <!-- loop through the messages -->
+                            <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                                {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                <label class='gap-1'for="name">Dojo Name:</label>
+                <!-- #input type NEEDS a name describer with the same name as your DB column -->
+                <input type="text" id="name" name="name">
+                <input class="gap-1 dojo-btn" type="submit" value="Submit">
+            </form>
+        </div>
+        <div class="ml-5 form-border d-flex-center d-flex-column">
+            <h1>All Dojos!</h1>
+            <table>
+                <tbody class="d-flex-center d-flex-column">
+                    <!-- JINJA!!! This is where we use PYTHON in our HTML! -->
+                    <!-- Create a FOR loop that imitates the for loop in your .py file -->
+                    <!-- This for loop iterates through each dojo in dojos -->
+                    {% for dojo in dojos %}
+                        <tr>
+                            <!-- Using the JINJA syntax we grab our data from the singular iteration with the data name we want  -->
+                            <td class="grow_small">
+                                <a href="/dojo/{{ dojo.id }}">{{ dojo.name }}</a>
+                            </td>
+                        </tr>
+                        <!-- END YOUR LOOP!!!!!!!!!!! -->
+                    {% endfor %}
+                </tbody>
+                
+            </table>
+        </div>
+    </div>
+    <div class="permanent-marker d-flex-center gap-3">
+        <a class="grow" href="/create_ninja">Add Ninja!</a>
+    </div>
+</body>
+</html>

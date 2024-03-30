@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Ninja</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}"></head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div>
+        <div>
+            <div class="header shinobininja d-flex-center">
+                <h2>Create your Ninja!</h2>
+            </div>
+            <!-- In your form you need an action route (you will need to create this route in the server.py file) and a POST method -->
+            <div class="permanent-marker">
+                <form class="d-flex-center d-flex-column" action="/new_ninja" method="POST">
+                        {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+                                    {% if messages %}                            <!-- check if there are any messages -->
+                                        {% for message in messages %}            <!-- loop through the messages -->
+                                <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                                        {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    <label for="dojo">Select Dojo:</label>
+                    <select id="dojo" name="dojo_id">
+                        <option value="" disabled selected>Select a dojo...</option>
+                        {% for dojo in dojos %}
+                        <option value="{{ dojo.id }}">{{ dojo.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="name">First Name:</label>
+                    <input type="text" id="first_name" name="first_name">
+                    <label class="gt-1" for="name">Last Name:</label>
+                    <input type="text" id="last_name" name="last_name">
+                    <label class="gt-1" for="name">Age:</label>
+                    <input type="text" id="age" name="age">
+                    <input class="gt-1 dojo-btn" type="submit" value="Submit">
+                </form>
+            </div>
+            <div class="permanent-marker d-flex-center d-flex-column gt-5">
+                <a class="grow" href="/all_ninjas">View All Ninjas</a>
+                <a class="grow gt-1" href="/">Homepage</a>
+            </div>
+    </div>
+</body>
+</html>

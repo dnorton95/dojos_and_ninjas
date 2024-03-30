@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Ninjas</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}"></head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}"></head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+<body class="gap-5">
+    <div class="container">
+        <div class="d-flex-center d-flex-column">
+            <h1 class="shinobininja neg-mb-5">All Ninjas!</h1>
+            <div class="table-container">
+                <table class="form-border permanent-marker gt-3">
+                    <thead>
+                        <th class="table-header" scope="col">First Name</th>
+                        <th class="table-header" scope="col">Last Name</th>
+                        <th class="table-header" scope="col">Age</th>
+                    </thead>
+                    <tbody>
+                        <!-- JINJA!!! This is where we use PYTHON in our HTML! -->
+                        <!-- Create a FOR loop that imitates the for loop in your .py file -->
+                        <!-- This for loop iterates through each dojo in dojos -->
+                        {% for ninja in ninjas %}
+                        <tr class="table-row">
+                            <!-- Using the JINJA syntax we grab our data from the singular iteration with the data name we want  -->
+                            <td class="table-data">{{ninja.first_name}}</td>
+                            <td class="table-data">{{ninja.last_name}}</td>
+                            <td class="table-data">{{ninja.age}}</td>
+                        </tr>
+                        <!-- END YOUR LOOP!!!!!!!!!!! -->
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="permanent-marker d-flex-center d-flex-column gt-5">
+        <a class="grow" href="/">Homepage</a>
+        <a class="grow gt-1" href="/create_ninja">Add a ninja</a>
+    </div>
+</body>
+</html>

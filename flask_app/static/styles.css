@@ -1,0 +1,255 @@
+/* Global Styles */
+body {
+    background-color: black;
+    color: red;
+}
+
+.d-flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.d-flex-around {
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+}
+
+.d-flex-start{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.d-flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.gap-1{
+    margin: 10px;
+}
+
+.gap-2 {
+    margin: 20px;
+}
+
+.gap-3{
+    margin: 30px;
+}
+
+.gap-4 {
+    margin: 40px;
+}
+
+.gap-5 {
+    margin: 50px;
+}
+
+.gt-1 {
+    margin-top: 10px;
+}
+
+.gt-2 {
+    margin-top: 20px;
+}
+
+.gt-3 {
+    margin-top: 30px;
+}
+
+.gt-4 {
+    margin-top: 40px;
+}
+
+.gt-5 {
+    margin-top: 50px;
+}
+
+.gr-1 {
+    margin-right: 10px;
+}
+
+.gr-2 {
+    margin-right: 20px;
+}
+
+.gr-3 {
+    margin-right: 30px;
+}
+
+.gr-4 {
+    margin-right: 40px;
+}
+
+.gr-5 {
+    margin-right: 50px;
+}
+
+.pad-1 {
+    padding: 10px;
+}
+
+.pad-2 {
+    padding: 20px;
+}
+
+.pad-3 {
+    padding: 30px
+}
+
+.pad-4 {
+    padding: 40px;
+}
+
+.pad-5 {
+    padding: 50px;
+}
+
+.ml-1 {
+    margin-left: 10px;
+}
+
+.ml-2 {
+    margin-left: 20px;
+}
+
+.ml-3 {
+    margin-left: 30px
+}
+
+.ml-4 {
+    margin-left: 40px;
+}
+
+.ml-5 {
+    margin-left: 50px;
+}
+
+.mr-1 {
+    margin-right: 10px;
+}
+
+.mr-2 {
+    margin-right: 20px;
+}
+
+.mr-3 {
+    margin-right: 30px
+}
+
+.mr-4 {
+    margin-right: 40px;
+}
+
+.mr-5 {
+    margin-right: 50px;
+}
+
+.neg-mb-1 {
+    margin-bottom: -10px;
+}
+.neg-mb-2 {
+    margin-bottom: -20px;
+}
+.neg-mb-3 {
+    margin-bottom: -30px;
+}
+.neg-mb-4 {
+    margin-bottom: -40px;
+}
+.neg-mb-5 {
+    margin-bottom: -50px;
+}
+
+.form-border {
+    border-style: solid;
+    border-radius: 5px;
+    padding: 10px;
+    border-color: silver;
+}
+
+.grow { 
+    transition: all .08s ease-in-out; 
+    }
+    
+.grow:hover { 
+transform: scale(3); 
+}
+
+.grow_small { 
+    transition: all .08s ease-in-out; 
+    }
+    
+.grow_small:hover { 
+transform: scale(1.5); 
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.table-container {
+    margin-top: 30px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-header, .table-data {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.table-header {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.table-row:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Fonts */
+
+@font-face {
+    font-family: 'Shinobi Ninja';
+    src: url('fonts/shinobi_ninja/Shinobi Ninja.otf') format('truetype');
+    /* You may need to adjust the path to match the location of your font file */
+}
+
+/* Local Styles */
+.header {
+    margin-bottom: -60px;
+}
+.shinobininja {
+    font-family: 'Shinobi Ninja', sans-serif;
+    font-size: 80px;
+}
+
+.permanent-marker {
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.dojo-btn {
+    background-color: red;
+    border-style: solid;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Permanent Marker';
+}
+

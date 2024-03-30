@@ -1,0 +1,10 @@
+We'll be creating a full stack application from the back end, to the front end
+
+1. Create a server.py file
+2. Create a virtual environment 
+3. Create your config, controllers, static, and templates folders
+4. Populate your config with your mysqlconnection.py file
+5. Populate your templates with an html template
+6. Render the html template in your server.py and check that it is connected
+7. Populate your contollers file with a faux .py file for the time being
+8. Populate your static file with a faux .css file for the time being

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ dojo.name }} Ninjas</title>
+    
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="d-flex-center gt-3 shinobininja">{{ dojo.name }} Ninjas!</h1>
+    <div class="permanent-marker d-flex-center container">
+        <div class="table-container">
+            <table class="form-border permanent-marker gt-3">
+                <thead>
+                    <tr>
+                        <th class="table-header">First Name</th>
+                        <th class="table-header">Last Name</th>
+                        <th class="table-header">Age</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for ninja in ninjas %}
+                    <tr>
+                        <td class="table-data">{{ ninja.first_name }}</td>
+                        <td class="table-data">{{ ninja.last_name }}</td>
+                        <td class="table-data">{{ ninja.age }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div>
+        <a class="gt-5 permanent-marker d-flex-center" href="/">Back!</a>
+    </div>
+</body>
+</html>
